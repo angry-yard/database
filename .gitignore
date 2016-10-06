@@ -1,0 +1,15 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# Ignore generated javascript files
+*.js
+*.js.map
+
+# Ignore dist folder
+dist/
+
+# Ignore node modules
+node_modules/
