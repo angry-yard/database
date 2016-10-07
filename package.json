@@ -1,6 +1,6 @@
 {
   "name": "jenny-database",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Generic database objects for use with jenny",
   "author": {
     "name": "Ryan Grady",
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angry-yard/database.git"
+    "url": "https://github.com/angry-yard/jenny-database.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/angry-yard/database/issues"
+    "url": "https://github.com/angry-yard/jenny-database/issues"
   },
-  "homepage": "https://github.com/angry-yard/database",
+  "homepage": "https://github.com/angry-yard/jenny-database",
   "scripts": {
-    "build": "npm run copyJs && npm run copyFiles && npm run cleanDist",
-    "copyJs": "xcopy src\\*.js dist /s /y",
+    "build": "npm run clearDist && npm run compile && npm run copyFiles",
     "copyFiles": "copy README.md dist && copy package.json dist",
-    "cleanDist": "rd dist\\interfaces /s /q && rd dist\\strings\\interfaces /s /q",
-    "publish": "npm publish .\\dist"
+    "clearDist": "del dist\\*.* /s /q",
+    "publish": "npm publish dist",
+    "compile": "tsc --module amd --moduleResolution node --outFile dist/jenny-database.js --declaration --listFiles"
   },
   "dependencies": {
     "bluebird": "^3.4.6"
